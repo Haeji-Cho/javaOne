@@ -1,0 +1,13 @@
+package workspace.chap09.src.sec03.generic;
+
+public class Cup<T> {
+    private T beverage;
+
+    public T getBeverage() {
+        return beverage;
+    }
+
+    public void setBeverage(T beverage) {
+        this.beverage = beverage;
+    }
+}
