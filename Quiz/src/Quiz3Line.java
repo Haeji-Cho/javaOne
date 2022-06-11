@@ -64,7 +64,9 @@ class Box extends Line {
 
 
     // whosBigger() 메서드
-    Box whosBigger(Box b){
-        return getWidth() * height > b.getWidth() * b.height;
-    }
+   Box whosBigger(Box b){
+        if (getWidth() * height > b.getWidth() * b.height)
+            return b;
+       return b;
+   }
 }
