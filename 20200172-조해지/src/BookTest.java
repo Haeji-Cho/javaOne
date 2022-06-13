@@ -21,6 +21,14 @@ public class BookTest {
 
     }
 }
+
+record Book1(int price) implements Comparable<Book1>{
+    @Override
+    public int compareTo(Book1 b) {
+        return price - b.price;
+    }
+}
+
 //
 //class Book implements Comparable<Book>{
 //    int price;
@@ -45,10 +53,3 @@ public class BookTest {
 //                ']';
 //    }
 //}
-
-record Book1(int price) implements Comparable<Book1>{
-    @Override
-    public int compareTo(Book1 b) {
-        return price - b.price;
-    }
-}

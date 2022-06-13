@@ -22,7 +22,7 @@ public class GirlTest {
 		Girl g2 = new GoodGirl();
 		GoodGirl gg = new BestGirl();
 
-		// g2.show();
+		//g2.show();
 		gg.show();
 	}
 }

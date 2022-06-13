@@ -4,7 +4,7 @@ public class ShapTest {
         //박스나 원을 배열로 만들고 싶을 때 섞어서 쓰고 싶으면 부모를 활용해야 한다.
         Shape[] shapes = {
                 new Circle("수정이", 10),
-                new Box("길동이", 20),
+                new Box1("길동이", 20),
                 new Circle("성신", 30)
         }; //실행문이면 ;을  넣고 아니면 넣지 말아야 한다.
 
@@ -13,7 +13,7 @@ public class ShapTest {
             if (s instanceof Circle s1)  //s1을 넣으면 sout에서 타입 변환을 하지 않아도 된다.
                 System.out.println(s1.show());   //두 개의 타입을 맞춰줘야 한다.
             else
-                System.out.println(((Box)s).show());
+                System.out.println(((Box1)s).show());
             System.out.println(s.getName());  //타입이 shape이지만 box나 circle을 가리킬 수 있다.
         }
     }
@@ -24,8 +24,8 @@ class Shape {  //부모의 object가 이미 string이기 때문에 자식이 문
 
 
     public Shape(String name) {
-        this.name = name;   //shape 뒤에 this는 정의된 객체를 가리킨다. 위의 shape 안의 길동, 성신.. 등
-    }
+        this.name = name; }  //shape 뒤에 this는 정의된 객체를 가리킨다. 위의 shape 안의 길동, 성신.. 등
+
 
     public String getName() {
         //if문으로 확인도 가능하다.
@@ -37,7 +37,7 @@ class Circle extends Shape { //오류가 발생하는 이유 시험에 나올 �
     private int radius;
 
     public Circle(String name, int radius) { //생성자는 항상 필요하다. member 변수는 private으로 하는 것이 일반적이다.
-        super(name);
+        super(name); //부모 클래스에서 물려받은 name이 super로 가장 먼저 와야한다.
         this.radius = radius;
     }
 
@@ -55,10 +55,10 @@ class Circle extends Shape { //오류가 발생하는 이유 시험에 나올 �
     }
 }
 
-class Box extends Shape {
+class Box1 extends Shape {
     private int length;
 
-    public Box(String name, int length) {
+    public Box1(String name, int length) {
         super(name);
         this.length = length;
     }

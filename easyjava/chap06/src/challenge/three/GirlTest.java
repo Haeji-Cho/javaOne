@@ -21,6 +21,7 @@ class GoodGirl extends Girl {
 	void show() {
 		System.out.println(name + "는 자바를 잘 안다.");
 	}
+	//부모메서드 오버라이딩함
 }
 
 class BestGirl extends GoodGirl {
